@@ -25,5 +25,16 @@ class WebSocket
     OPCODE_PING = 0x09
     OPCODE_PONG = 0x0a
 
+    def initialize(arg, params = {})
+        if params[:server]
+
+            @server = params[:server]
+            @socket = arg
+            line = gets()
+            if !line
+                raise(WebSocket::Error "Client disconnect without sending anything")
+            end
+        end
+    end
 
 end
