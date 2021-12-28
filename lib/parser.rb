@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 module Parser
     @regexp = /([^:]+):([0-9]+)?(\+)?:([^:]+)?:?([\s\S]*)?/
   
