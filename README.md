@@ -8,8 +8,15 @@ $ gem install rubysocket-client
 
 ## RubySocket Tutorial:
 
-- examples:
+- example:
 
 ```ruby
-require 'rubysocket'
+require 'RubySocket'
+
+client = RubySocket.connect("https://google.com") do
+  before_start do
+    on_message {|message| puts "incoming message: #{message}"}
+    on_event('news') { |data| puts data.first} 
+  end
+end
 ```
